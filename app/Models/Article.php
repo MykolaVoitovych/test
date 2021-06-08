@@ -21,7 +21,7 @@ class Article extends Model
 
     public function mismatch(User $user)
     {
-        if ($this) {
+        if ($this->trashed()) {
             return null;
         }
         return !!$this->users->firstWhere('id', $user->id);
