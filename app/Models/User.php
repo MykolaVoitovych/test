@@ -77,4 +77,10 @@ class User extends Authenticatable
             ]
         ]);
     }
+
+    public static function getExperience($userId)
+    {
+        $user = User::find($userId);
+        return optional($user)->experinece;
+    }
 }
